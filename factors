@@ -1,0 +1,9 @@
+#!/bin/bash
+
+ARGV=$1
+
+while read NUM
+do
+    factors=($(factor $NUM))
+    echo "$NUM=$(($NUM/${factors[1]}))*${factors[1]}"
+done < $ARGV
